@@ -1,0 +1,20 @@
+{
+  "name": "hexo-backlink",
+  "version": "0.0.1",
+  "description": "This plugin is for transfer Obsidian-type backlink to standard markdown hyper-link",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexo",
+    "plugin",
+    "backlink",
+    "obsidian"
+  ],
+  "author": "BorGor",
+  "license": "MIT",
+  "dependencies": {
+    "hexo-log": "^3.0.0"
+  }
+}
