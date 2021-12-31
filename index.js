@@ -1,15 +1,20 @@
 const log = require("hexo-log")({ debug: false, slient: false });
 const fs = require("hexo-fs");
-
-const base_dir = process.cwd();
+const path = require("path");
+const base_dir = path.join(process.cwd(), "source", "_posts");
 
 const file_list = fs
   .listDirSync(base_dir, {
     ignorePattern: /node_modules/,
   })
-  .filter((each) => each && /\.md$/.test(each));
-console.log([...file_list]);
-console.log(file_list.map((each) => each.split(/\\/)));
+  .filter((each) => each && /\.md$/.test(each))
+  .map((each) => {
+    return {
+      fileName: each.split(path.sep).at(-1),
+      filePath: each,
+    };
+  });
+
 /**
  * md文件返回 true
  * @param {*} data
@@ -23,6 +28,7 @@ function ignore(data) {
 function action(data) {
   const { content } = data;
   let result = /\[\[.*?\]\]/.exec(content);
+  console.log(result);
   if (result) {
     log.info(data.source);
     log.info(JSON.stringify(result, " ", 2));
@@ -33,7 +39,6 @@ function action(data) {
 hexo.extend.filter.register(
   "before_post_render",
   (data) => {
-    debugger;
     if (!ignore(data)) {
       action(data);
     }
