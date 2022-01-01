@@ -18,7 +18,7 @@ const fileList = fs
   });
 
 /**
- * md文件返回 true
+ * md returns true
  * @param {*} data
  */
 function ignore(data) {
