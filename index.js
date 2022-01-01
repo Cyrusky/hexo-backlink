@@ -59,9 +59,12 @@ function action(data) {
 
 hexo.extend.filter.register(
   "before_post_render",
-  (data) => {
-    if (!ignore(data)) {
-      action(data);
+  function (data) {
+    let { config } = this;
+    if (config.backlink) {
+      if (!ignore(data)) {
+        action(data);
+      }
     }
   },
   0
