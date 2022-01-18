@@ -15,6 +15,11 @@ Add `backlink:true` in `_config.yml`:
 ## Know-issue
 
 - Can not convert link include `tags`, it will ignore the tags. like:
+
   ```
   [[DemoMarkdownFile#Demo]] --<result equals>-> [[DemoMarkdownFile]]
   ```
+
+## TODO
+
+- [] Update the documents and make sure you can start from zero.
