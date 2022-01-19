@@ -13,10 +13,18 @@
   "author": "BorGor",
   "license": "MIT",
   "dependencies": {
-    "hexo-log": "^3.0.0"
+    "hexo-log": "^3.0.0",
+    "husky": "^7.0.4",
+    "jira-smart-commit": "^1.1.2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Cyrusky/hexo-backlink.git"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "jira-smart-commit PSN",
+      "pre-commit": "lint-staged"
+    }
   }
 }
