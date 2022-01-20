@@ -24,3 +24,4 @@ Add `backlink:true` in `_config.yml`:
 
 - [] Update the documents and make sure you can start from zero.
 - [] Change the project to typescript.
+- [] Try to do some integritions.
