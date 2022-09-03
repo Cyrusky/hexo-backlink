@@ -1,7 +1,7 @@
 const log = require("hexo-log")({ debug: false, slient: false });
 const fs = require("hexo-fs");
 const path = require("path");
-const base_dir = path.join(process.cwd(), "source", "_posts");
+const base_dir = path.join(hexo.source_dir, "_posts");
 
 const fileList = fs
   .listDirSync(base_dir, {
@@ -10,6 +10,10 @@ const fileList = fs
   .filter((each) => each && /\.md$/.test(each))
   .map((each) => {
     let array = (each + "").split(path.sep);
+    // For Windows
+    if (path.sep === "\\") {
+      each = each.replace(new RegExp("\\" + path.sep, "g"), "/");
+    }
     return {
       fileNameExt: array.length === 0 ? "" : array[array.length - 1],
       filePath: each,
