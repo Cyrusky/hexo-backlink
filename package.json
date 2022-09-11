@@ -1,6 +1,6 @@
 {
   "name": "hexo-backlink",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "This plugin is for transfer Obsidian-type backlink to standard hexo in-site post link.",
   "main": "index.js",
   "scripts": {},
