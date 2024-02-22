@@ -46,6 +46,9 @@ devDependencies:
   eslint-plugin-simple-import-sort:
     specifier: ^10.0.0
     version: 10.0.0(eslint@8.56.0)
+  git-cz:
+    specifier: ^4.9.0
+    version: 4.9.0
   hexo-fs:
     specifier: ^4.1.1
     version: 4.1.1
@@ -1473,6 +1476,11 @@ packages:
     resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
     dependencies:
       resolve-pkg-maps: 1.0.0
+    dev: true
+
+  /git-cz@4.9.0:
+    resolution: {integrity: sha512-cSRL8IIOXU7UFLdbziCYqg8f8InwLwqHezkiRHNSph7oZqGv0togId1kMTfKil6gzK0VaSXeVBb4oDl0fQCHiw==}
+    hasBin: true
     dev: true
 
   /glob-parent@5.1.2:

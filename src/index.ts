@@ -37,7 +37,7 @@ const ignore = (data) => {
 
 function action(data) {
   let { content } = data;
-  let result = content.match(/\[\[.*?\]\]/g);
+  let result = content.match(/\[\[.*?]]/g);
   if (result && result.length > 0) {
     result.forEach((linkName: string) => {
       // {% post_link Ubuntu/ubuntu-enable-root 'Ubuntu Linux上启用root账户' %}
