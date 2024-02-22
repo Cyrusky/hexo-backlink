@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": true,
+    "strictPropertyInitialization": false,
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@@/*": [
+        "typings/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ]
+  },
+  "exclude": [],
+  "include": [
+    "./src/**/*.ts",
+    "pm2.config.js",
+    "./build/**/*.ts"
+  ]
+}
