@@ -1,6 +1,10 @@
-const log = require("hexo-log")({ debug: false, slient: false });
-const fs = require("hexo-fs");
-const path = require("path");
+/*************************************************
+ * Copyright (c) 2023.
+ * Author: Cyrusky <bo.jin@borgor.cn>
+ *************************************************/
+import fs from "hexo-fs";
+import path from "path";
+
 const base_dir = path.join(hexo.source_dir, "_posts");
 
 const fileList = fs
@@ -25,17 +29,17 @@ const fileList = fs
  * md returns true
  * @param {*} data
  */
-function ignore(data) {
-  var source = data.source;
-  var ext = source.substring(source.lastIndexOf(".")).toLowerCase();
+const ignore = (data) => {
+  const source = data.source;
+  const ext = source.substring(source.lastIndexOf(".")).toLowerCase();
   return ["md"].indexOf(ext) > -1;
-}
+};
 
 function action(data) {
   let { content } = data;
   let result = content.match(/\[\[.*?\]\]/g);
   if (result && result.length > 0) {
-    result.forEach((linkName) => {
+    result.forEach((linkName: string) => {
       // {% post_link Ubuntu/ubuntu-enable-root 'Ubuntu Linux上启用root账户' %}
       let [realName, showName] = (linkName + "")
         .replace("[[", "")
@@ -52,7 +56,7 @@ function action(data) {
           // `<a href="${file.articleName}${
           //   anchor ? "#" + anchor : ""
           // }" name="${realName}" id="huiqu">${showName || realName}</a>`
-          `{% post_link ${file.articleName} '${showName || realName}' %}`
+          `{% post_link ${file.articleName} '${showName || realName}' %}`,
         );
       }
     });
@@ -71,5 +75,5 @@ hexo.extend.filter.register(
       }
     }
   },
-  0
+  0,
 );

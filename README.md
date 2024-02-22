@@ -15,7 +15,7 @@ Add `backlink:true` in `_config.yml`:
 Check the settings in Obsidian as follow:
 
 > "Settings" -> "Files & Links" -> "New link format" , setting as "Relative path to file"  
-> "Settings" -> "Files & Links" -> "Use [[Wikilinks]]" , keeping it ON 
+> "Settings" -> "Files & Links" -> "Use [[Wiki links]]" , keeping it ON 
 
 ## Know-issue
 
